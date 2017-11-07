@@ -1,0 +1,353 @@
+@font-face {
+  font-family: DinPro;
+  src: url("../fonts/DINPro-CondensedBold.woff") format("woff");
+}
+
+/*
+========================================================
+GENERAL
+========================================================
+*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, Helvetica, sans-serif;
+  background-color: #232323;
+  height: 100%;
+}
+
+h1 {
+  font-family: DinPro;
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #fff;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #fff;
+}
+
+h4 {
+  font-size: 1.3rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+h6 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-weight: normal;
+  color: #434857;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+/*
+========================================================
+BANNER
+========================================================
+*/
+
+.hero {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3.75rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.hero header h1 {
+  z-index: 999;
+  font-size: 4em;
+}
+
+.hero video {
+  z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.3;
+
+}
+
+@keyframes wordfade {
+  0% {
+    top: 50px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+.hero header {
+  animation: wordfade 0.8s 1 0.5s ease-in-out;
+  position: relative;
+  animation-fill-mode: backwards;
+}
+
+.hero {
+  height: 100%;
+  margin: 0;
+  -webkit-box-shadow: inset 0px 30px 30px -30px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0px 30px 30px -30px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0px 30px 30px -30px rgba(0, 0, 0, 0.05);
+}
+
+
+.arrow-wrap {
+  bottom: 10px;
+  height: 100px;
+  margin-left: -50px;
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  width: 100px;
+  z-index: 1;
+  display: block;
+  cursor: pointer
+}
+
+.arrow-wrap p {
+  font: 700 0.7em/1em 'roboto', sans-serif;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+  color: #fff;
+}
+
+.arrow-wrap>p {
+  text-transform: uppercase;
+  text-indent: 3px;
+}
+
+.mouse {
+  border: 2px solid #fff;
+  border-radius: 13px;
+  display: block;
+  height: 46px;
+  left: 50%;
+  margin: 10px 0 0 -13px;
+  position: absolute;
+  width: 26px;
+}
+
+.mouse span {
+  display: block;
+  font-size: 1.5em;
+  margin: 6px auto;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+/*
+========================================================
+LAYOUT SECTION
+========================================================
+*/
+
+body {
+  margin-bottom: 18rem;
+}
+main {
+  width: 75em;
+  margin: auto;
+  margin-top: 2em;
+}
+
+section>header {
+  display: flex;
+  margin-bottom: 1.5em;
+}
+
+.header-text h5 {
+  color: #fff;
+  margin-top: 3px;
+  opacity: 0.35;
+  font-weight: 300;
+}
+
+section {
+  margin-bottom: 1em;
+}
+
+.section {
+  position: relative;
+  padding: 2em;
+  background-color: #292929;
+}
+
+.section-col-2 {
+  display: flex;
+  padding: 0;
+  justify-content: space-between;
+}
+
+.section-col-2>div {
+  width: 49.3%;
+  padding: 2em;
+  background-color: #292929;
+}
+
+.header-icons {
+  margin-left: auto;
+}
+
+.fa-sort-numeric-asc, .fa-sort-amount-desc {
+  color: #fff;
+  margin-left: 0.5em;
+  cursor: pointer;
+}
+
+/*
+========================================================
+BARCHART
+========================================================
+*/
+
+.bar-text {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+text {
+  fill: #fff;
+  opacity: 0.75;
+}
+
+line {
+  stroke: #fff;
+  opacity: 0.3;
+}
+
+.domain {
+  stroke: #fff;
+  opacity: 0;
+}
+
+.tooltip {
+  position: absolute;
+  line-height: 16px;
+  z-index: 10;
+  color: #fff;
+  padding: 10px;
+  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.legend-wrapper {
+  position: absolute;
+  top: 94px;
+}
+
+.legend-item {
+  float: left;
+  margin-right: 1em;
+}
+
+.legend-item text {
+  color: #fff;
+  font-size: 12px;
+  cursor: default;
+}
+
+/*HTML Horizonal Legend*/
+
+.club-name {
+  margin: 0 !important;
+}
+
+.key-dot {
+  display: inline-block;
+  height: 10px;
+  margin-right: .5em;
+  width: 10px;
+}
+
+/*
+========================================================
+CIRCLE
+========================================================
+*/
+
+.bubblechart svg {
+  display: block;
+  text-anchor: middle;
+  margin: auto;
+}
+
+.bubblechart circle {
+  transition: linear 0.1s;
+}
+
+.bubblechart text {
+  fill: #fff;
+  user-select: none;
+  cursor: default;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.champion-value {
+  font-family: DinPro;
+  font-size: 2.8em;
+  font-weight: 600
+}
+
+.champion-value-DWS, .champion-value-AZ, .champion-value-FCT {
+  display: none;
+}
+
+.champion-id-DWS, .champion-id-AZ, .champion-id-FCT {
+  position: absolute;
+  bottom: 2em;
+}
