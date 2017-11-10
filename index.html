@@ -14,7 +14,7 @@
   <div class="hero">
     <header>
       <h1>Dashboard Datadivision</h1>
-      <h3>Eredivisie 1960 t/m 2017</h3>
+      <h3>Eredivisie Topscorer/Assist statistics</h3>
     </header>
     <div class="arrow-wrap">
       <p>scroll</p>
@@ -25,18 +25,29 @@
     <video src="assets/video/eredivisie.mp4" autoplay loop muted playsinline></video>
   </div>
 
-
   <main>
-
     <section class="section">
       <header>
         <div class="header-text">
-          <h4>Topscorers against eredivisie champions</h4>
-          <h5>1960 t/m 2017</h5>
+          <h4 class="bar-title">Relation between Topscorers and league champions</h4>
+          <h5 class="bar-date">Eredivisie - 1960 t/m 2017</h5>
+
         </div>
         <div class="header-icons">
-          <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+
+          <div class="show-topscorer">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <span>Topscorers</span>
+          </div>
+
+          <div class="show-assist">
+            <span>Most assist</span>
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </div>
+
+          <i class="fa fa-sort-numeric-asc fa-sort-numeric-asc-active" aria-hidden="true"></i>
           <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+
         </div>
       </header>
       <div class="legend-wrapper"></div>
@@ -47,15 +58,18 @@
       <div class="bubblechart">
         <header>
           <div class="header-text">
-            <h4>Eredivisie titles</h4>
-            <h5>Eredivisie 1960 t/m 2017</h5>
+            <h4>Total league Champions</h4>
+            <h5>Eredivisie - 1960 t/m 2017</h5>
           </div>
         </header>
 
       </div>
 
-      <div class="bubblechart">
-        <h4>Most goals</h4>
+      <div class="piechart">
+        <div class="header-text">
+          <h4>Percentage of total Topscorers</h4>
+          <h5>Eredivisie - 1960 t/m 2017</h5>
+        </div>
       </div>
 
     </section>
@@ -63,11 +77,11 @@
   </main>
 
   <script src="https://d3js.org/d3.v4.min.js"></script>
-  <!-- <script type="text/javascript" src="assets/js/graph-scroll.js"></script> -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="assets/js/index.js"></script>
   <script type="text/javascript" src="assets/js/barchart.js"></script>
   <script type="text/javascript" src="assets/js/bubblechart.js"></script>
+  <script type="text/javascript" src="assets/js/piechart.js"></script>
 </body>
 
 </html>

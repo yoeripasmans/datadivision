@@ -1,0 +1,47 @@
+[{
+    "club": "Ajax",
+    "color": "#C50D2F"
+  },
+  {
+    "club": "Feyenoord",
+    "color": "#00a76f"
+  },
+  {
+    "club": "PSV",
+    "color": "#56B7D4"
+  },
+  {
+    "club": "AZ",
+    "color": "#DEDEDE"
+  },
+  {
+    "club": "Vitesse",
+    "color": "#FECF06"
+  },
+  {
+    "club": "FC Twente",
+    "color": "#7B8196"
+  },
+  {
+    "club": "SC Heerenveen",
+    "color": "#0A5191"
+  },
+
+  {
+    "club": "Volendam",
+    "color": "#FF641B"
+  },
+  {
+    "club": "DWS",
+    "color": "#284878"
+  },
+  {
+    "club": "NEC",
+    "color": "#33787E"
+  },
+  {
+    "club": "Sparta",
+    "color": "#DD3B31"
+  }
+
+]
