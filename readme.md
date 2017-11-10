@@ -1,6 +1,6 @@
 # Individual Project ID - Interactive Eredivisie data visualization
 
-For this individual project I've made an interactive data visualization dashboard with different datasets of the dutch football league, Eredivisie. This data visualization combines assignment A & B.
+For this individual project I've made an interactive data visualization dashboard with different datasets of the dutch football league named Eredivisie. This data visualization combines assignment A & B.
 
 ![][cover]
 
