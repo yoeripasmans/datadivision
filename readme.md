@@ -1,12 +1,12 @@
 # Individual Project ID - Interactive Eredivisie data visualization
 
-For this individual project I've made an interactive data visualization dashboard of different datasets of the dutch football league Eredivisie. This data visualization combines assignment A & B.
+For this individual project I've made an interactive data visualization dashboard with different datasets of the dutch football league, Eredivisie. This data visualization combines assignment A & B.
 
 ![][cover]
 
 ## Background
 
-I've started with thinking about a concept with Football data. I thought it was interesting to see if there was a relation between the topscorer and the league champion. For this I stared to sketching different graphs which combining all of the data. After that I've started developing and found different datasets from 'Eredivisie stats'. This data consist all of the Eredivisie topscorers per year.  When I visualized the topscorers, I want to combine it with an another dataset. I found another one which consist all of the champions of the Eredivisie per year. Together with all of the data I've made a dashboard with different graphs showing stats and relations of the chosen data. With one main graph showing the relation between topscorers, most assist and league champions.
+I've started with thinking about a concept with Football data. I thought it was interesting to see if there was a relation between the topscorer and the league champion. For this I stared to sketching different graphs which combining all of the data. After that I've started searching for different datasets and found one from 'Eredivisie stats'. This data consist all of the Eredivisie topscorers per year. I started developing with this data and visualized the topscorers in a bar chart, after that I wanted to combine it with an another dataset. I found another one which consist all of the champions of the Eredivisie per year. To visualize this data I've made a chart with circles below the x axis of the bar chart showing the champion with different colors. Together with all of the data I've made an interactive dashboard with different graphs showing stats and relations of the chosen data. With one main graph showing the relation between topscorers, most assist and league champions.
 
 ## Functionality
 
@@ -39,7 +39,7 @@ bars.append("text")
   })
 ```
 
-1. Added gridlines on the y axis
+5. Added gridlines on the y-axis
 
   ```javascript
   function make_y_gridlines() {
@@ -55,7 +55,7 @@ bars.append("text")
   );
   ```
 
-2. Added colors from the topscorers club to the svg in a json file. In this object the clubs and colors are formatted like this:
+6. Added colors from the topscorers club in a json file. In the json file the clubs and colors are formatted like this:
 
 ```javascript
 [{
@@ -72,7 +72,7 @@ bars.append("text")
   },
 ```
 
-Then added a fill to the bars in the svg by comparing the club color data to the topscorers data in a for loop.
+7. Then I added a fill to the bars in the svg by comparing the clubcolor.json file to the topscorers data in a for loop.
 
 ```javascript
 .style("fill", function(d) {
@@ -84,9 +84,9 @@ Then added a fill to the bars in the svg by comparing the club color data to the
 })
 ```
 
-5. Downloaded the Eredivisie champions dataset from ['voetbal.com'](http://www.voetbal.com/winnaar/ned-eredivisie/)
+8. Downloaded the Eredivisie champions dataset from ['voetbal.com'](http://www.voetbal.com/winnaar/ned-eredivisie/)
 
-5. Made another svg with circles under the x-axis of the bar chart displaying the Eredivisie champion of that season.
+9. Made another svg with circles under the x-axis of the bar chart displaying the Eredivisie champion of that season.
 
 ```javascript
 var circles = d3.select('svg').append('g')
@@ -110,9 +110,9 @@ circles.selectAll('circle')
   });
 ```
 
-7. Downloaded the Eredivisie most assist dataset from ['voetbal.com']((http://www.voetbal.com/assists/ned-eredivisie-2017-2018/))
+10. Downloaded the Eredivisie most assist dataset from ['voetbal.com']((http://www.voetbal.com/assists/ned-eredivisie-2017-2018/))
 
-6. Made 2 separate functions to call the different data which consist topscorers and most assist per year. The topscorer data gets called on init, the assist data when the user clicks on the update button. Therefore I used another dataset to load in the most assist data in the assistData function.
+11. Made 2 separate functions to call the different data which consist topscorers and most assist per year. The topscorer data gets called on init, the assist data when the user clicks on the show assist button. Therefore I used another dataset to load in the most assist data in the assistData function.
 
 ```javascript
 function topscorerData() {
@@ -126,7 +126,7 @@ function assistData(data) {
   d3.csv("data/assist.csv", function(error, data) {
 ```
 
-7. Made a sort function to sort the bars on amount of goals or assist per player. Used almost the same function for sorting to original position of the data.
+12. Made a sort function to sort the bars on amount of goals or assist per player. Used almost the same function for the current sorting of the data.
 
 ```javascript
 function sortOnGoals(data) {
@@ -178,7 +178,7 @@ function sortOnGoals(data) {
 }
 ```
 
-8. Made the legend working based on https://bl.ocks.org/jkeohan/b8a3a9510036e40d3a4e
+13. Made a legend for the barchart working based on https://bl.ocks.org/jkeohan/b8a3a9510036e40d3a4e
 
 ```javascript
 var legend = d3.select('.legend-wrapper').selectAll("legend-item")
@@ -201,7 +201,7 @@ p.insert("text").text(function(d, i) {
 });
 ```
 
-9. Added a hover effect on the bars, circles and text when the user hovers over the legend or circles. Hiding all other clubs than the club where the user hovers on.
+14. Added a hover effect on the bars, circles and text when the user hovers over the legend or circles. Hiding all other clubs than the club where the user hovers on.
 
 ```javascript
 //Change the opacity of the selected club trough bars, circles and text on mouseover
@@ -236,7 +236,8 @@ p.on("mouseover", function(d) {
     });
 ```
 
-10. Added a transition when the user scrolls down to the graph. Then the topscorerData gets loaded and the animation starts
+15. Added a transition to the bar chart when the user scrolls down to the graph. On a certain scrol height the topscorerData gets loaded and the animation starts
+
 ```javascript
 var scrolled;
 
@@ -249,22 +250,9 @@ function scroll() {
 window.addEventListener("scroll", scroll);
 ```
 
-10. Added a transition when the user scrolls down to the graph. Then the topscorerData gets loaded and the animation starts
-```javascript
-var scrolled;
+16. Made a bubble chart working with my own data based on this example.  [Mike Bostock's Bubble Chart]https://bl.ocks.org/mbostock/4063269
 
-function scroll() {
-  if (window.pageYOffset > 350 && !scrolled) {
-    scrolled = true;
-    return topscorerData();
-  }
-}
-window.addEventListener("scroll", scroll);
-```
-
-11. Made a bubble chart working with my own data based on this example.  [Mike Bostock's Bubble Chart]https://bl.ocks.org/mbostock/4063269
-
-12. Added a tooltip
+17. Added a tooltip to the bubble chart
 
 ```javascript
 .on("mouseover", function(d) {
@@ -285,12 +273,13 @@ window.addEventListener("scroll", scroll);
 });
 ```
 
-14. Added my own color scheme
+18. Added my own color scheme to the bubbles
+
 ```javascript
 var color = d3.scaleOrdinal(["#C50D2F", "#5C9CCC", "#00a76f", "#0A5191", "#DEDEDE", "#FECF06", "#284878"]);
 ```
 
-13. Added a value to the labels in the bubbles.
+19. Added a value label to the text labels in the bubbles.
 
 ```javascript
 .append("tspan")
@@ -306,9 +295,9 @@ var color = d3.scaleOrdinal(["#C50D2F", "#5C9CCC", "#00a76f", "#0A5191", "#DEDED
 });
 ```
 
-14. Made a pie chart working with my own data based on this example: [Mike Bostock's Piechart](https://bl.ocks.org/mbostock/3887235)
+20. Made a pie chart working with my own data based on this example: [Mike Bostock's Piechart](https://bl.ocks.org/mbostock/3887235)
 
-12. Added a tooltip
+12. Added a tooltip to the pie chart
 
 ```javascript
 .on("mouseover", function(d) {
@@ -340,6 +329,7 @@ var color = d3.scaleOrdinal(["#C50D2F", "#5C9CCC", "#00a76f", "#0A5191", "#DEDED
 ### index.html
 
 - Linked `Javascript` and `CSS` files.
+- Added libaries
 - Added icons from `font-awesome`
 - Added headings
 - Added containers for the `svg`'s'
